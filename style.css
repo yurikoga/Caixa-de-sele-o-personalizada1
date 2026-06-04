@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* O Card principal elevado */
+.card {
+    background-color: #e0e5ec;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), 
+                -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+#status-text {
+    color: #8a929e;
+    font-size: 1.2rem;
+    font-weight: 500;
+    min-width: 100px;
+}
+
+/* Esconder o checkbox real */
+.switch input {
+    display: none;
+}
+
+/* O Trilho (Track) do switch - Efeito Inset */
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    background-color: #e0e5ec;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.1),
+                inset -6px -6px 10px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* O Botão deslizante (Knob) - Efeito Elevado */
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #e0e5ec;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 3px 3px 6px rgb(163, 177, 198, 0.6), 
+                -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Movimento do botão ao marcar */
+input:checked + .slider::before {
+    transform: translateX(50px);
+}
